@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClearWords</title>
+<meta name="description" content="Understand your cancer report in plain English, Pidgin, Yoruba, Igbo or Hausa.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">C</span>
+      <div>
+        <h1>ClearWords</h1>
+        <p class="tag">Understand your medical report in your own language</p>
+      </div>
+    </div>
+    <span id="mode" class="mode" hidden></span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="notice" role="note">
+    <strong>Not medical advice.</strong> ClearWords only explains words in the text you paste. It cannot diagnose or tell you what treatment to take. Always talk to your doctor or care team.
+  </div>
+
+  <section id="input-card" class="card" aria-labelledby="in-h">
+    <h2 id="in-h">1. Paste your report text</h2>
+    <label for="text" class="sr">Report text</label>
+    <textarea id="text" rows="9" maxlength="6000" placeholder="Paste text from a clinic note, pathology report, scan report or discharge summary here…"></textarea>
+    <div class="row between">
+      <button type="button" id="sample" class="link">Use a sample report</button>
+      <span id="count" class="muted">0 / 6000</span>
+    </div>
+
+    <h2 class="mt">2. Choose a language</h2>
+    <div id="langs" class="langs" role="radiogroup" aria-label="Language"></div>
+
+    <div class="row mt">
+      <button type="button" id="go" class="primary">Explain it to me</button>
+      <button type="button" id="clear" class="ghost">Clear</button>
+    </div>
+    <p class="muted small">Your text is sent only to generate this explanation. We do not save it, and there is no account or login.</p>
+  </section>
+
+  <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+  <section id="result" class="card" hidden aria-labelledby="res-h">
+    <div class="row between">
+      <h2 id="res-h">Your explanation</h2>
+      <div class="row">
+        <button type="button" id="speak" class="ghost">🔊 Read aloud</button>
+        <button type="button" id="print" class="ghost">Print / save</button>
+      </div>
+    </div>
+    <p id="lowconf" class="warn" hidden></p>
+
+    <h3>In simple words</h3>
+    <p id="summary" class="summary"></p>
+
+    <h3>Words in your report</h3>
+    <dl id="terms" class="terms"></dl>
+
+    <h3>Questions to ask your doctor</h3>
+    <ol id="questions"></ol>
+
+    <h3>When to get help quickly</h3>
+    <p id="help" class="help"></p>
+
+    <p class="muted small foot">Explained by AI from the text you pasted. It can make mistakes, so check anything important with your care team.</p>
+  </section>
+</main>
+
+<footer class="wrap muted small">ClearWords · built for the 2026 CodeTheCure Hackathon (Patient Experience &amp; Support)</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
